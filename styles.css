@@ -1,0 +1,263 @@
+/* styles.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --primary-color-dark: #388E3C;
+    --secondary-color: #FF9800; /* Orange */
+    --secondary-color-dark: #F57C00;
+    --accent-color: #FF5722; /* Red */
+    --accent-color-dark: #E64A19;
+    --background-color: #f0f0f0; /* Light Gray */
+    --white-color: #ffffff; /* White */
+    --black-color: #000000; /* Black */
+    --gray-color: #757575; /* Gray */
+}
+
+/* General Styles */
+body {
+    background-color: var(--background-color);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Button Styles */
+.stButton button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stButton.secondary button {
+    background-color: var(--secondary-color);
+}
+
+.stButton.accent button {
+    background-color: var(--accent-color);
+}
+
+.stButton button:hover {
+    background-color: var(--primary-color-dark);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.stButton.secondary button:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+.stButton.accent button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+.stButton button:active {
+    transform: scale(0.95);
+}
+
+/* Input Styles */
+.stTextInput input, 
+.stNumberInput input, 
+.stDateInput input, 
+.stSelectbox select, 
+.stSlider, 
+.stCheckbox {
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0.5em;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stTextInput input:focus, 
+.stNumberInput input:focus, 
+.stDateInput input:focus, 
+.stSelectbox select:focus {
+    border-color: var(--primary-color-dark);
+    box-shadow: 0 0 8px rgba(69, 160, 73, 0.6);
+}
+
+/* Slider Styles */
+.stSlider .stSliderTrack, 
+.stSlider .stSliderThumb {
+    background-color: var(--primary-color);
+}
+
+/* Checkbox Styles */
+.stCheckbox .stCheckboxCheckbox {
+    accent-color: var(--primary-color);
+}
+
+/* Table Styles */
+.stDataFrame {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stDataFrame table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stDataFrame th, 
+.stDataFrame td {
+    border: 1px solid var(--gray-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.stDataFrame th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.stDataFrame tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+/* Form Styles */
+.stForm {
+    background-color: var(--white-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.stForm:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Spinner Styles */
+.stSpinner div {
+    border-top-color: var(--primary-color) !important;
+}
+
+/* Link Styles */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-color-dark);
+}
+
+/* Custom Title Styles */
+.custom-title {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+/* Custom Box Styles */
+.custom-box {
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-color);
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.custom-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-dark); 
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Alerts Styles */
+.stAlert {
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.stAlert.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.stAlert.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.stAlert.warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.stAlert.info {
+    background-color: #d9edf7;
+    color: #31708f;
+}
